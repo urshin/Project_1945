@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +10,13 @@ public class KYS_Background : MonoBehaviour
 
     private void Awake()
     {
-        mt = GetComponent<SpriteRenderer>().material;
+        mt = GetComponent<MeshRenderer>().material;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       mt.mainTextureOffset += new Vector2 (0.5f * Time.deltaTime, 0);
     }
 }
