@@ -6,7 +6,7 @@ using UnityEngine;
 public class KYS_Background : MonoBehaviour
 {
     Material mt = null;
-    float map_speed = 5f;
+    float map_speed = 1f;
 
     private void Awake()
     {
@@ -17,6 +17,6 @@ public class KYS_Background : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       mt.mainTextureOffset += new Vector2 (0.5f * Time.deltaTime, 0);
+       mt.mainTextureOffset += new Vector2 (map_speed * Time.deltaTime, 0);
     }
 }
