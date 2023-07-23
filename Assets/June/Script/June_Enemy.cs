@@ -9,7 +9,7 @@ public class June_Enemy : MonoBehaviour
     
     
 
-    public float Hp = 5;
+    public float Hp ;
     public float speed = 1;
     public GameObject Effect;
 
@@ -25,11 +25,10 @@ public class June_Enemy : MonoBehaviour
     }
     void CreateBullte() //Àû ÃÑ¾Ë »ý¼º
     {
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-        {
+        
             Instantiate(Bullet, ms.position, Quaternion.identity);
             Invoke("CreateBullte", Delay);
-        }
+        
 
 
     }
@@ -51,7 +50,9 @@ public class June_Enemy : MonoBehaviour
         Debug.Log(Hp);
         if(Hp <= 0)
         {
+            Instantiate(Effect, ms.position, Quaternion.identity);
             Destroy(gameObject);
+            
         }
         
     }

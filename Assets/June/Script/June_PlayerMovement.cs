@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerMovement : MonoBehaviour
+public class June_PlayerMovement : MonoBehaviour
 {
     Animator ani; //애니메이터 가져올 변수
     public float moveSpeed = 5;
- 
+    
+    [SerializeField]
+    
+
 
 
     void Start()
     {
         ani = GetComponent<Animator>();
+        
     }
 
 
@@ -33,11 +38,16 @@ public class PlayerMovement : MonoBehaviour
         {
             moveX = (moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal")) / 2;
             moveY = (moveSpeed * Time.deltaTime * Input.GetAxis("Vertical")) / 2;
+            transform.GetChild(0).gameObject.SetActive(true); //자식객체 0번 불러와서 켜주기
+
+
         }
         else
         {
             moveX = moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
             moveY = moveSpeed * Time.deltaTime * Input.GetAxis("Vertical");
+            transform.GetChild(0).gameObject.SetActive(false);
+
         }
 
         if (Input.GetAxis("Horizontal") >= 0.1f)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerShooting : MonoBehaviour
+public class June_PlayerShooting : MonoBehaviour
 {
     public GameObject bullet = null; //미사일 
     public Transform pos = null; //미사일 발사

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class June_EnemySpawn : MonoBehaviour
 {
+   
+
     public float Xleft = -2.5f; //甘 谅螟 场
     public float XRight = 2.5f; //甘 快螟 场
 
@@ -71,6 +73,8 @@ public class June_EnemySpawn : MonoBehaviour
 
     }
     Vector3 B = new Vector3(0, 1.5f, 0);
+
+    //利 1
     IEnumerator RandomSpawn1()
     {
         yield return new WaitForSeconds(StartTime1);
@@ -86,6 +90,8 @@ public class June_EnemySpawn : MonoBehaviour
             Instantiate(Enemy1, r, Quaternion.identity);
         }
     }
+
+    //利2
     IEnumerator RandomSpawn2()
     {
         yield return new WaitForSeconds(StartTime2);
@@ -102,6 +108,8 @@ public class June_EnemySpawn : MonoBehaviour
             Instantiate(Enemy2, r, Quaternion.identity);
         }
     }
+
+    //郡府飘 利
     IEnumerator RandomSpawn3()
     {
         yield return new WaitForSeconds(StartTime3);
